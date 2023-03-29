@@ -44,4 +44,26 @@
 	.activeLink {
 		@apply text-aqua text-[16px] leading-[22px];
 	}
+	.mySwiper {
+		@apply max-w-[585px] h-[648px] pt-[146px];
+	}
+	.sectionTitle {
+		@apply font-medium text-[40px] leading-[44px];
+	}
+	.sectionBlock {
+		@apply flex flex-col gap-[92px];
+	}
+}
+.swiper-pagination-bullet {
+	width: 30px;
+	height: 4px;
+	background: #d1d1d1;
+	opacity: 1;
+	border-radius: 0%;
+}
+.swiper-pagination-bullet-active {
+	background: #000000;
+}
+.swipper-pagination {
+	left: 100px;
 }
