@@ -5,10 +5,12 @@ import NotFound from '@/pages/NotFound'
 import Shop from '@/pages/Shop'
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Header from './Header'
 
 const Layout: React.FC = (): JSX.Element => {
 	return (
 		<>
+			<Header />
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route path='/shop' element={<Shop />} />
