@@ -33,13 +33,13 @@ const Offer: React.FC = (): JSX.Element => {
 									отечественных дизайнеров
 								</p>
 								<Link
-									className='w-[310px] h-[68px] flex items-center'
+									className='w-[310px] h-[68px] flex items-center group'
 									to='/shop'
 								>
 									<span className='w-[67px] h-[68px] flex items-center justify-center bg-aquaLight'>
 										<ArrowDownIcon />
 									</span>
-									<span className='w-[263px] h-[68px] bg-aqua flex items-center justify-center'>
+									<span className='w-[263px] h-[68px] text-white bg-aqua flex items-center justify-center group-hover:bg-aquaBright'>
 										Открыть магазин
 									</span>
 								</Link>
@@ -57,13 +57,13 @@ const Offer: React.FC = (): JSX.Element => {
 									свежих красок и вдохновения с Womazing!
 								</p>
 								<Link
-									className='w-[310px] h-[68px] flex items-center'
+									className='w-[310px] h-[68px] flex items-center group'
 									to='/shop'
 								>
 									<span className='w-[67px] h-[68px] flex items-center justify-center bg-aquaLight'>
 										<ArrowDownIcon />
 									</span>
-									<span className='w-[263px] h-[68px] bg-aqua flex items-center justify-center'>
+									<span className='w-[263px] h-[68px] text-white bg-aqua flex items-center justify-center group-hover:bg-aquaBright'>
 										Открыть магазин
 									</span>
 								</Link>
@@ -79,13 +79,13 @@ const Offer: React.FC = (): JSX.Element => {
 									искали в этом сезоне. Время исследовать.
 								</p>
 								<Link
-									className='w-[310px] h-[68px] flex items-center'
+									className='w-[310px] h-[68px] flex items-center group'
 									to='/shop'
 								>
 									<span className='w-[67px] h-[68px] flex items-center justify-center bg-aquaLight'>
 										<ArrowDownIcon />
 									</span>
-									<span className='w-[263px] h-[68px] bg-aqua flex items-center justify-center'>
+									<span className='w-[263px] h-[68px] text-white bg-aqua flex items-center justify-center group-hover:bg-aquaBright'>
 										Открыть магазин
 									</span>
 								</Link>
