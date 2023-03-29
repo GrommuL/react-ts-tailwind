@@ -15,6 +15,7 @@ module.exports = {
 				aquaHover: 'rgba(110, 156, 159, 0.64)',
 				aquaLight: 'rgba(110, 156, 159, 0.1)',
 				grey: '#D5D5D5',
+				greyLink: '#919191',
 				greyLight: '#D1D1D1',
 				linen: '#F1EADC',
 				gold: '#998E78',
