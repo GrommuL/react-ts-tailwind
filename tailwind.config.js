@@ -11,7 +11,7 @@ module.exports = {
 				black: '#000000',
 				white: '#ffffff',
 				aqua: '#6E9C9F',
-				aquaDark: 'rgba(110, 156, 159, 0.1)',
+				aquaLight: 'rgba(110, 156, 159, 0.1)',
 				grey: '#D5D5D5',
 				greyLight: '#D1D1D1',
 				linen: '#F1EADC',
