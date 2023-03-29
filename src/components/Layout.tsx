@@ -1,10 +1,11 @@
+import { Route, Routes } from 'react-router-dom'
 import About from '@/pages/About'
 import Contacts from '@/pages/Contacts'
 import Home from '@/pages/Home'
 import NotFound from '@/pages/NotFound'
 import Shop from '@/pages/Shop'
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import Footer from './Footer'
 import Header from './Header'
 
 const Layout: React.FC = (): JSX.Element => {
@@ -18,6 +19,7 @@ const Layout: React.FC = (): JSX.Element => {
 				<Route path='/contacts' element={<Contacts />} />
 				<Route path='/*' element={<NotFound />} />
 			</Routes>
+			<Footer />
 		</>
 	)
 }
