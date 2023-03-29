@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 
 const Offer: React.FC = (): JSX.Element => {
 	return (
-		<section className='pt-[40px] relative'>
+		<section className='pt-[40px] relative mb-[130px]'>
 			<div className='container'>
 				<div className='flex items-center gap-[150px]'>
 					<Swiper

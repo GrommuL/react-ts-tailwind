@@ -47,6 +47,12 @@
 	.mySwiper {
 		@apply max-w-[585px] h-[648px] pt-[146px];
 	}
+	.sectionTitle {
+		@apply font-medium text-[40px] leading-[44px];
+	}
+	.sectionBlock {
+		@apply flex flex-col gap-[92px];
+	}
 }
 .swiper-pagination-bullet {
 	width: 30px;
