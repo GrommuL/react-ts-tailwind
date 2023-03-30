@@ -50,13 +50,25 @@ const Footer: React.FC = (): JSX.Element => {
 						</div>
 						<div className='flex flex-col items-end gap-[30px]'>
 							<div className='flex items-center gap-[12px]'>
-								<Link className='text-[28px]' to='/https://www.instagram.com/'>
+								<Link
+									className='text-[28px]'
+									target='_blank'
+									to='https://www.instagram.com/'
+								>
 									<AiOutlineInstagram />
 								</Link>
-								<Link className='text-[28px]' to='/https://facebook.com/'>
+								<Link
+									className='text-[28px]'
+									target='_blank'
+									to='https://facebook.com/'
+								>
 									<AiOutlineFacebook />
 								</Link>
-								<Link className='text-[28px]' to='/https://twitter.com/'>
+								<Link
+									className='text-[28px]'
+									target='_blank'
+									to='https://twitter.com/'
+								>
 									<SlSocialTwitter />
 								</Link>
 							</div>
