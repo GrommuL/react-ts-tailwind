@@ -2,6 +2,7 @@ import CartItem from '@/components/CartItem'
 import CloseIcon from '@/components/icons/CloseIcon'
 import PageTitle from '@/components/PageTitle'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Cart: React.FC = (): JSX.Element => {
 	return (
@@ -42,12 +43,12 @@ const Cart: React.FC = (): JSX.Element => {
 										<span className='text-[25px] leading-[35px]'>Итого:</span>
 										<span className='text-[25px] leading-[35px]'>$129</span>
 									</div>
-									<button
+									<Link
 										className='text-[17px] leading-[24px] flex items-center justify-center py-[22px] px-[50px] bg-aqua text-white hover:bg-aquaBright'
-										type='button'
+										to='/ordering'
 									>
 										Оформить заказ
-									</button>
+									</Link>
 								</div>
 							</div>
 						</div>

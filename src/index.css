@@ -17,7 +17,7 @@
 	}
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
 	width: 7px;
 }
 
@@ -26,13 +26,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #464646;
+	background: rgba(110, 156, 159, 0.64);
 	border-radius: 150px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
-} */
+	background: #6e9c9f;
+}
 
 @layer components {
 	.container {

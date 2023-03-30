@@ -8,6 +8,7 @@ import Cart from '@/pages/Cart'
 import React from 'react'
 import Footer from './Footer'
 import Header from './Header'
+import Ordering from '@/pages/Ordering'
 
 const Layout: React.FC = (): JSX.Element => {
 	return (
@@ -17,6 +18,7 @@ const Layout: React.FC = (): JSX.Element => {
 				<Route path='/' element={<Home />} />
 				<Route path='/shop' element={<Shop />} />
 				<Route path='/cart' element={<Cart />} />
+				<Route path='/ordering' element={<Ordering />} />
 				<Route path='/about' element={<About />} />
 				<Route path='/contacts' element={<Contacts />} />
 				<Route path='/*' element={<NotFound />} />
