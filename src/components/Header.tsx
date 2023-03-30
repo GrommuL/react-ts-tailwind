@@ -23,9 +23,9 @@ const Header: React.FC = (): JSX.Element => {
 						))}
 					</nav>
 					<div>
-						<button>
+						<Link to='/cart'>
 							<BasketIcon />
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>

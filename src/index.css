@@ -53,6 +53,12 @@
 	.sectionBlock {
 		@apply flex flex-col gap-[92px];
 	}
+	.categoryButton {
+		@apply border border-black py-[19px] px-[35px] hover:bg-black hover:text-white text-[17px] leading-[24px];
+	}
+	.categoryButtonActive {
+		@apply border border-black py-[19px] px-[35px] bg-black text-white text-[17px] leading-[24px];
+	}
 }
 .swiper-pagination-bullet {
 	width: 30px;
