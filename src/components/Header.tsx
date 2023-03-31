@@ -22,9 +22,15 @@ const Header: React.FC = (): JSX.Element => {
 							</NavLink>
 						))}
 					</nav>
-					<div>
+					<div className='flex items-center gap-[35px]'>
 						<Link to='/cart'>
 							<BasketIcon />
+						</Link>
+						<Link
+							className='hover:text-aqua text-[16px] leading-[22px]'
+							to='/login'
+						>
+							Войти
 						</Link>
 					</div>
 				</div>

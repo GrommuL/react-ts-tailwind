@@ -66,7 +66,7 @@ const Ordering: React.FC = (): JSX.Element => {
 								<h3 className='text-[25px] leading-[35px]'>Комментарии</h3>
 								<form className='flex flex-col gap-[35px]'>
 									<textarea
-										className='text-[17px] leading-[24px] outline-none w-[443px] h-[134px] border-b-2 border-black resize-none'
+										className='text-[17px] leading-[24px] outline-none w-[443px] h-[134px] border-b-2 border-black resize-none focus:border-2 focus:border-black focus:rounded-2xl py-3 px-4 transition-all duration-75'
 										id='message'
 										cols={3}
 										rows={10}
