@@ -12,6 +12,7 @@ import Ordering from '@/pages/Ordering'
 import SuccessOrder from '@/pages/SuccessOrder'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+import Product from '@/pages/Product'
 
 const Layout: React.FC = (): JSX.Element => {
 	const location = useLocation()
@@ -26,6 +27,7 @@ const Layout: React.FC = (): JSX.Element => {
 				<Route path='/' element={<Home />} />
 				<Route path='/shop' element={<Shop />} />
 				<Route path='/cart' element={<Cart />} />
+				<Route path='/product/:id' element={<Product />} />
 				<Route path='/ordering' element={<Ordering />} />
 				<Route path='/ordering/success' element={<SuccessOrder />} />
 				<Route path='/about' element={<About />} />
