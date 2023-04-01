@@ -10,9 +10,9 @@ const authSlice = createSlice({
 	name: 'auth',
 	initialState,
 	reducers: {
-		setAuth: (state, action: PayloadAction<string>) => {
-			state.email = action.payload
-			state.password = action.payload
+		setAuth: (state, action: PayloadAction<IAuthState>) => {
+			state.email = action.payload.email
+			state.password = action.payload.password
 		}
 	}
 })
