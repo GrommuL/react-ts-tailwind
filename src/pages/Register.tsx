@@ -3,11 +3,18 @@ import bg from '@/assets/dream-team-2.jpg'
 import { Link } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { IRegisterFormInput } from '@/types'
+import { useAppDispatch, useAppSelector } from '@/utils/hooks/redux'
+import { setAuth } from '@/store/slices/authSlice'
 
 const Register: React.FC = (): JSX.Element => {
+	const { email, password } = useAppSelector((state) => state.auth)
+	const dispatch = useAppDispatch()
 	const { register, handleSubmit, reset } = useForm<IRegisterFormInput>()
-	const onSubmit: SubmitHandler<IRegisterFormInput> = (data) =>
-		console.log(data)
+	const onSubmit: SubmitHandler<IRegisterFormInput> = (data) => {
+		dispatch(setAuth(data))
+		reset()
+	}
+
 	return (
 		<main className='w-full flex items-center relative'>
 			<Link
