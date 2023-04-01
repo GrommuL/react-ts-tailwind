@@ -15,6 +15,7 @@ const Header: React.FC = (): JSX.Element => {
 					<nav className='flex items-center gap-[45px]'>
 						{navigationList.map((item) => (
 							<NavLink
+								key={item.nameLink}
 								className={({ isActive }) => (isActive ? 'activeLink' : 'link')}
 								to={item.path}
 							>
