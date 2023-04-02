@@ -1,18 +1,26 @@
 import React from 'react'
 import bg from '@/assets/dream-team-2.jpg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { IRegisterFormInput } from '@/types'
-import { useAppDispatch, useAppSelector } from '@/utils/hooks/redux'
-import { setAuth } from '@/store/slices/authSlice'
+import { useAppDispatch } from '@/utils/hooks/redux'
+import { addUser } from '@/store/slices/userSlice'
+import { useAddUserMutation } from '@/services/UserService'
 
 const Register: React.FC = (): JSX.Element => {
-	const { email, password } = useAppSelector((state) => state.auth)
+	const navigate = useNavigate()
+	const [createUser] = useAddUserMutation()
 	const dispatch = useAppDispatch()
 	const { register, handleSubmit, reset } = useForm<IRegisterFormInput>()
 	const onSubmit: SubmitHandler<IRegisterFormInput> = (data) => {
-		dispatch(setAuth(data))
-		reset()
+		try {
+			createUser(data)
+			dispatch(addUser(data))
+			reset()
+			navigate('/')
+		} catch (error) {
+			console.log(error)
+		}
 	}
 
 	return (
