@@ -1,8 +1,23 @@
 import React from 'react'
 import bg from '@/assets/mainPhoto.jpg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { IRegisterFormInput } from '@/types'
+import { useAppDispatch } from '@/utils/hooks/redux'
+import { loginUser } from '@/store/slices/userSlice'
+import { useSignInUserMutation } from '@/services/UserService'
 
 const Login: React.FC = (): JSX.Element => {
+	const [signInUser] = useSignInUserMutation()
+	const navigate = useNavigate()
+	const { register, handleSubmit, reset } = useForm<IRegisterFormInput>()
+	const dispatch = useAppDispatch()
+	const onSubmitLogin: SubmitHandler<IRegisterFormInput> = (data) => {
+		signInUser(data)
+		dispatch(loginUser(data))
+		reset()
+		navigate('/')
+	}
 	return (
 		<main className='w-full flex items-center relative'>
 			<Link
@@ -19,14 +34,19 @@ const Login: React.FC = (): JSX.Element => {
 			<div className='w-[50%] flex flex-col gap-[170px] items-center justify-center'>
 				<div className='flex flex-col gap-[90px]'>
 					<h2 className='text-[50px] leading-[30px]'>Вход в аккаунт</h2>
-					<form className='flex flex-col items-center gap-[50px]'>
+					<form
+						className='flex flex-col items-center gap-[50px]'
+						onSubmit={handleSubmit(onSubmitLogin)}
+					>
 						<label className='flex flex-col gap-[50px]'>
 							<input
+								{...register('email')}
 								className='h-[40px] pl-2 border-2 border-black text-[20px] leading-[30px] rounded-xl'
 								type='email'
 								placeholder='E-mail'
 							/>
 							<input
+								{...register('password')}
 								className='h-[40px] pl-2 border-2 border-black text-[20px] leading-[30px] rounded-xl'
 								type='password'
 								placeholder='Пароль'

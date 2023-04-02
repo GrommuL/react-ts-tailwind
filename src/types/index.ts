@@ -1,4 +1,4 @@
-export interface IAuthState {
+export interface IUser {
 	email: string
 	password: string
 }
