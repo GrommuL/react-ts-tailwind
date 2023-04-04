@@ -8,7 +8,7 @@ const Home: React.FC = (): JSX.Element => {
 	return (
 		<main>
 			<Offer />
-			<Collections />
+			{/* <Collections /> */}
 			<Features />
 			<DreamTeam />
 		</main>

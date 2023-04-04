@@ -1,39 +1,57 @@
 import PageTitleMore from '@/components/PageTitleMore'
-import ProductItem from '@/components/ProductItem'
+import { useGetOneProductQuery } from '@/services/ProductsService'
+import { useAppDispatch } from '@/utils/hooks/redux'
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const Product: React.FC = (): JSX.Element => {
+	const { id } = useParams()
+	const dispatch = useAppDispatch()
+	const { data } = useGetOneProductQuery(id)
+
 	return (
 		<main className='mt-[190px] mb-[130px]'>
 			<div className='container'>
 				<section className='flex flex-col gap-[102px]'>
 					<PageTitleMore
-						title='Свитшоты'
-						link='линк с выбраной категорией'
-						secondTitle='Свитшот Sweet Shot'
-						secondLink='/product/:id'
+						title={`${
+							data?.category === 'hoody'
+								? 'Толстовки'
+								: data?.category === 'sportsuit'
+								? 'Спортивный костюм'
+								: data?.category === 'sweatshirt'
+								? 'Свитшоты'
+								: data?.category === 'tshort'
+								? 'Футболки'
+								: ''
+						}`}
+						link={'/shop'}
+						secondTitle={`${data?.title}`}
+						secondLink={`/product/${id}`}
 					/>
 					<div className='flex items-center gap-[74px]'>
-						<img className='w-[536px] h-[729px]' src='/tshirt.jpg' alt='' />
+						<img
+							className='w-[536px] h-[729px] object-cover'
+							src={`/public/${data?.image}`}
+							alt=''
+						/>
 						<div className='flex flex-col gap-[59px]'>
-							<span className='text-[40px] leading-[44px] text-gold'>$311</span>
+							<span className='text-[40px] leading-[44px] text-gold'>
+								${data?.price}
+							</span>
 							<div className='flex flex-col gap-[34px]'>
 								<span className='text-[20px] leading-[28px]'>
 									Выберите размер
 								</span>
 								<div className='flex items-center gap-[14px]'>
-									<button className='w-[41px] h-[41px] text-[17px] leading-[24px] flex items-center justify-center border border-black uppercase hover:bg-black hover:text-white'>
-										s
-									</button>
-									<button className='w-[41px] h-[41px] text-[17px] leading-[24px] flex items-center justify-center border border-black uppercase hover:bg-black hover:text-white'>
-										m
-									</button>
-									<button className='w-[41px] h-[41px] text-[17px] leading-[24px] flex items-center justify-center border border-black uppercase hover:bg-black hover:text-white'>
-										l
-									</button>
-									<button className='w-[41px] h-[41px] text-[17px] leading-[24px] flex items-center justify-center border border-black uppercase hover:bg-black hover:text-white'>
-										xl
-									</button>
+									{data?.size.map((item) => (
+										<button
+											className='w-[41px] h-[41px] text-[17px] leading-[24px] flex items-center justify-center border border-black uppercase hover:bg-black hover:text-white'
+											key={item}
+										>
+											{item}
+										</button>
+									))}
 								</div>
 							</div>
 							<div className='flex flex-col gap-[34px]'>
@@ -68,8 +86,8 @@ const Product: React.FC = (): JSX.Element => {
 					<div className='sectionBlock'>
 						<h3 className='sectionTitle'>Связанные товары</h3>
 						<div className='flex items-center flex-wrap gap-[30px]'>
-							<ProductItem />
-							<ProductItem />
+							{/* <ProductItem />
+							<ProductItem /> */}
 						</div>
 					</div>
 				</section>
