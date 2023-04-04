@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import userReducer from './slices/userSlice'
+import productsReducer from './slices/productsSlice'
 import { userApi } from '@/services/UserService'
 import {
 	persistStore,
@@ -12,10 +13,13 @@ import {
 	REGISTER
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import { productApi } from '@/services/ProductsService'
 
 const rootReducer = combineReducers({
 	user: userReducer,
-	[userApi.reducerPath]: userApi.reducer
+	products: productsReducer,
+	[userApi.reducerPath]: userApi.reducer,
+	[productApi.reducerPath]: productApi.reducer
 })
 
 const persistConfig = {
@@ -31,13 +35,8 @@ const store = configureStore({
 			serializableCheck: {
 				ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
 			}
-		}).concat(userApi.middleware)
+		}).concat(userApi.middleware, productApi.middleware)
 })
-// getDefaultMiddleware({
-// 	serializableCheck: {
-// 		ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-// 	}
-// })
 
 export const persistor = persistStore(store)
 

@@ -13,10 +13,14 @@ const Login: React.FC = (): JSX.Element => {
 	const { register, handleSubmit, reset } = useForm<IRegisterFormInput>()
 	const dispatch = useAppDispatch()
 	const onSubmitLogin: SubmitHandler<IRegisterFormInput> = (data) => {
-		signInUser(data)
-		dispatch(loginUser(data))
-		reset()
-		navigate('/')
+		try {
+			signInUser(data)
+			dispatch(loginUser(data))
+			reset()
+			navigate('/')
+		} catch (error) {
+			console.log(error)
+		}
 	}
 	return (
 		<main className='w-full flex items-center relative'>
