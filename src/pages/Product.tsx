@@ -1,5 +1,7 @@
 import PageTitleMore from '@/components/PageTitleMore'
 import { useGetOneProductQuery } from '@/services/ProductsService'
+import { addToCart } from '@/store/slices/cartSlice'
+import { IProductItem } from '@/types'
 import { useAppDispatch } from '@/utils/hooks/redux'
 import React from 'react'
 import { useParams } from 'react-router-dom'
@@ -7,44 +9,46 @@ import { useParams } from 'react-router-dom'
 const Product: React.FC = (): JSX.Element => {
 	const { id } = useParams()
 	const dispatch = useAppDispatch()
-	const { data } = useGetOneProductQuery(id)
-
+	const product = useGetOneProductQuery(id)
+	const addItemToCart = (data: any) => {
+		dispatch(addToCart(data))
+	}
 	return (
 		<main className='mt-[190px] mb-[130px]'>
 			<div className='container'>
 				<section className='flex flex-col gap-[102px]'>
 					<PageTitleMore
 						title={`${
-							data?.category === 'hoody'
+							product.data?.category === 'hoody'
 								? 'Толстовки'
-								: data?.category === 'sportsuit'
+								: product.data?.category === 'sportsuit'
 								? 'Спортивный костюм'
-								: data?.category === 'sweatshirt'
+								: product.data?.category === 'sweatshirt'
 								? 'Свитшоты'
-								: data?.category === 'tshort'
+								: product.data?.category === 'tshort'
 								? 'Футболки'
 								: ''
 						}`}
 						link={'/shop'}
-						secondTitle={`${data?.title}`}
+						secondTitle={`${product.data?.title}`}
 						secondLink={`/product/${id}`}
 					/>
 					<div className='flex items-center gap-[74px]'>
 						<img
 							className='w-[536px] h-[729px] object-cover'
-							src={`/public/${data?.image}`}
+							src={`/${product.data?.image}`}
 							alt=''
 						/>
 						<div className='flex flex-col gap-[59px]'>
 							<span className='text-[40px] leading-[44px] text-gold'>
-								${data?.price}
+								${product.data?.price}
 							</span>
 							<div className='flex flex-col gap-[34px]'>
 								<span className='text-[20px] leading-[28px]'>
 									Выберите размер
 								</span>
 								<div className='flex items-center gap-[14px]'>
-									{data?.size.map((item) => (
+									{product.data?.size.map((item) => (
 										<button
 											className='w-[41px] h-[41px] text-[17px] leading-[24px] flex items-center justify-center border border-black uppercase hover:bg-black hover:text-white'
 											key={item}
@@ -77,7 +81,10 @@ const Product: React.FC = (): JSX.Element => {
 										+
 									</button>
 								</div>
-								<button className='w-[289px] h-[68px] text-[17px] leading-[24px] flex items-center justify-center py-[22px] px-[50px] bg-aqua text-white hover:bg-aquaBright'>
+								<button
+									className='w-[289px] h-[68px] text-[17px] leading-[24px] flex items-center justify-center py-[22px] px-[50px] bg-aqua text-white hover:bg-aquaBright'
+									onClick={() => addItemToCart(product.data)}
+								>
 									Добавить в корзину
 								</button>
 							</div>

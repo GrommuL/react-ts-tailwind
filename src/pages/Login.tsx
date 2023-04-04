@@ -15,7 +15,7 @@ const Login: React.FC = (): JSX.Element => {
 	const onSubmitLogin: SubmitHandler<IRegisterFormInput> = (data) => {
 		try {
 			signInUser(data)
-			dispatch(loginUser(data))
+			dispatch(loginUser({ ...data, orders: [] }))
 			reset()
 			navigate('/')
 		} catch (error) {
