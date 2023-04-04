@@ -1,6 +1,7 @@
 export interface IUser {
 	email: string
 	password: string
+	orders?: IProductItem[]
 }
 
 export interface IRegisterFormInput {

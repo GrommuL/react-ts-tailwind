@@ -1,10 +1,12 @@
 import CartItem from '@/components/CartItem'
 import CloseIcon from '@/components/icons/CloseIcon'
 import PageTitle from '@/components/PageTitle'
+import { useAppSelector } from '@/utils/hooks/redux'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Cart: React.FC = (): JSX.Element => {
+	const cartItems = useAppSelector((state) => state.cart)
 	return (
 		<main className='mt-[190px] mb-[130px]'>
 			<div className='container'>
@@ -20,10 +22,9 @@ const Cart: React.FC = (): JSX.Element => {
 							</div>
 							<div className='flex flex-col gap-[70px]'>
 								<div className='flex flex-col gap-[20px]'>
-									<CartItem />
-									<CartItem />
-									<CartItem />
-									<CartItem />
+									{cartItems.items.map((item) => (
+										<CartItem key={item.id} {...item} />
+									))}
 								</div>
 								<form className='flex items-center gap-[16px]'>
 									<input
