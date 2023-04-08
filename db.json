@@ -23,7 +23,8 @@
 			"colors": ["red", "blue", "white", "black"],
 			"inStock": 15,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 2,
@@ -35,7 +36,8 @@
 			"colors": ["black", "white"],
 			"inStock": 21,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 3,
@@ -47,7 +49,8 @@
 			"colors": ["white", "black", "grey"],
 			"inStock": 23,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 4,
@@ -59,7 +62,8 @@
 			"colors": ["red", "grey", "black", "white"],
 			"inStock": 25,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 5,
@@ -71,7 +75,8 @@
 			"colors": ["white", "black", "grey"],
 			"inStock": 10,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 6,
@@ -83,7 +88,8 @@
 			"colors": ["beige", "black", "white", "red", "blue", "pink", "grey"],
 			"inStock": 33,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 7,
@@ -95,7 +101,8 @@
 			"colors": ["beige", "black", "white", "red", "blue", "pink", "grey"],
 			"inStock": 12,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 8,
@@ -107,7 +114,8 @@
 			"colors": ["beige", "black", "white", "red", "pink", "grey"],
 			"inStock": 9,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 9,
@@ -119,7 +127,8 @@
 			"colors": ["beige", "black", "white", "red", "pink", "grey", "blue"],
 			"inStock": 31,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 10,
@@ -131,7 +140,8 @@
 			"colors": ["beige", "black", "white", "red", "pink", "grey", "blue"],
 			"inStock": 6,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 11,
@@ -143,7 +153,8 @@
 			"colors": ["grey", "red", "black", "white"],
 			"inStock": 45,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 12,
@@ -155,7 +166,8 @@
 			"colors": ["grey", "black", "white", "red"],
 			"inStock": 52,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 13,
@@ -177,7 +189,8 @@
 			],
 			"inStock": 44,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 14,
@@ -199,7 +212,8 @@
 			],
 			"inStock": 15,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 15,
@@ -211,7 +225,8 @@
 			"colors": ["white", "grey", "black", "red"],
 			"inStock": 16,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 16,
@@ -233,7 +248,8 @@
 			],
 			"inStock": 27,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 17,
@@ -245,7 +261,8 @@
 			"colors": ["pink", "brown", "beige", "red", "white", "black"],
 			"inStock": 31,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 18,
@@ -267,7 +284,8 @@
 			],
 			"inStock": 20,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 19,
@@ -279,7 +297,8 @@
 			"colors": ["pink", "brown", "beige", "orange", "black", "grey"],
 			"inStock": 19,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		},
 		{
 			"id": 20,
@@ -301,7 +320,8 @@
 			],
 			"inStock": 14,
 			"selectedSize": "",
-			"count": 1
+			"count": 1,
+			"totalPrice": 0
 		}
 	]
 }
