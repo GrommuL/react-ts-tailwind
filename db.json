@@ -1,327 +1,659 @@
 {
-	"users": [
-		{
-			"email": "info@womazing.com",
-			"password": "$2a$10$MPsJNWQDyOrDHH2pbpiWQ.TCUicnmrWWBQD7wRizlTdfbTNJNuU1C",
-			"orders": [],
-			"id": 1
-		},
-		{
-			"email": "123@123",
-			"password": "$2a$10$.Hkpufl2dobkJgNDRqLxPOUkT1nwmMQw6Cm2w2J4NfvNMrOnBwp3y",
-			"id": 2
-		}
-	],
-	"clothes": [
-		{
-			"id": 1,
-			"title": "Hoody Chess",
-			"price": 415,
-			"image": "Shop/hoody1.jpg",
-			"category": "hoody",
-			"size": ["s", "m", "l", "xl", "xxl", "xs"],
-			"colors": ["red", "blue", "white", "black"],
-			"inStock": 15,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 2,
-			"title": "Hoody Harley Queen",
-			"price": 400,
-			"image": "Shop/hoody2.jpg",
-			"category": "hoody",
-			"size": ["s", "m", "xl"],
-			"colors": ["black", "white"],
-			"inStock": 21,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 3,
-			"title": "Hoody Anime",
-			"price": 519,
-			"image": "Shop/hoody3.jpg",
-			"category": "hoody",
-			"size": ["s", "m", "l", "xl"],
-			"colors": ["white", "black", "grey"],
-			"inStock": 23,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 4,
-			"title": "Hoody Wendy",
-			"price": 75,
-			"image": "Shop/hoody4.jpg",
-			"category": "hoody",
-			"size": ["s", "m", "xl"],
-			"colors": ["red", "grey", "black", "white"],
-			"inStock": 25,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 5,
-			"title": "Hoody Rick and Morty",
-			"price": 339,
-			"image": "Shop/hoody5.jpg",
-			"category": "hoody",
-			"size": ["s", "m", "l", "xl"],
-			"colors": ["white", "black", "grey"],
-			"inStock": 10,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 6,
-			"title": "Sport Suit STAMINA1",
-			"price": 279,
-			"image": "Shop/sportsuit1-black.jpg",
-			"category": "sportsuit",
-			"size": ["s", "m", "xl"],
-			"colors": ["beige", "black", "white", "red", "blue", "pink", "grey"],
-			"inStock": 33,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 7,
-			"title": "Sport Suit STAMINA2",
-			"price": 279,
-			"image": "Shop/sportsuit2.jpg",
-			"category": "sportsuit",
-			"size": ["s", "m", "l", "xl"],
-			"colors": ["beige", "black", "white", "red", "blue", "pink", "grey"],
-			"inStock": 12,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 8,
-			"title": "Sport Suit Milk",
-			"price": 229,
-			"image": "Shop/sportsuit3-blue.jpg",
-			"category": "sportsuit",
-			"size": ["s", "m", "xl"],
-			"colors": ["beige", "black", "white", "red", "pink", "grey"],
-			"inStock": 9,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 9,
-			"title": "Sport Suit WarmHeart",
-			"price": 259,
-			"image": "Shop/sportsuit4.jpg",
-			"category": "sportsuit",
-			"size": ["s", "m", "l", "xl"],
-			"colors": ["beige", "black", "white", "red", "pink", "grey", "blue"],
-			"inStock": 31,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 10,
-			"title": "Sport Suit Flow",
-			"price": 290,
-			"image": "Shop/sportsuit5-black.jpg",
-			"category": "sportsuit",
-			"size": ["s", "m", "xl"],
-			"colors": ["beige", "black", "white", "red", "pink", "grey", "blue"],
-			"inStock": 6,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 11,
-			"title": "Sweatshirt Jinx LOL",
-			"price": 300,
-			"image": "Shop/sweatshirt5.jpg",
-			"category": "sweatshirt",
-			"size": ["s", "m", "l", "xl"],
-			"colors": ["grey", "red", "black", "white"],
-			"inStock": 45,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 12,
-			"title": "Sweatshirt Dragon",
-			"price": 200,
-			"image": "Shop/sweatshirt4-black.jpg",
-			"category": "sweatshirt",
-			"size": ["s", "m", "xl"],
-			"colors": ["grey", "black", "white", "red"],
-			"inStock": 52,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 13,
-			"title": "Sweatshirt Rabbit",
-			"price": 230,
-			"image": "Shop/sweatshirt3-pink.jpg",
-			"category": "sweatshirt",
-			"size": ["s", "m", "l", "xl"],
-			"colors": [
-				"pink",
-				"white",
-				"black",
-				"red",
-				"khaki",
-				"beige",
-				"grey",
-				"aqua",
-				"blue"
-			],
-			"inStock": 44,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 14,
-			"title": "Sweatshirt Cat",
-			"price": 250,
-			"image": "Shop/sweatshirt2.jpg",
-			"category": "sweatshirt",
-			"size": ["s", "m", "xl"],
-			"colors": [
-				"pink",
-				"white",
-				"black",
-				"red",
-				"khaki",
-				"beige",
-				"grey",
-				"aqua",
-				"blue"
-			],
-			"inStock": 15,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 15,
-			"title": "Sweatshirt Euphoria",
-			"price": 200,
-			"image": "Shop/sweatshirt1.jpg",
-			"category": "sweatshirt",
-			"size": ["s", "m", "l", "xl"],
-			"colors": ["white", "grey", "black", "red"],
-			"inStock": 16,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 16,
-			"title": "Футболка Монализа",
-			"price": 540,
-			"image": "Shop/tshort1.jpg",
-			"category": "tshort",
-			"size": ["s", "m", "xl"],
-			"colors": [
-				"pink",
-				"black",
-				"brown",
-				"beige",
-				"red",
-				"orange",
-				"white",
-				"blue",
-				"grey"
-			],
-			"inStock": 27,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 17,
-			"title": "Футболка девочка",
-			"price": 520,
-			"image": "Shop/tshort2-beige.jpg",
-			"category": "tshort",
-			"size": ["s", "m", "l", "xl"],
-			"colors": ["pink", "brown", "beige", "red", "white", "black"],
-			"inStock": 31,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 18,
-			"title": "Футболка Japan",
-			"price": 350,
-			"image": "Shop/tshort3-black.jpg",
-			"category": "tshort",
-			"size": ["s", "m", "xl"],
-			"colors": [
-				"pink",
-				"black",
-				"brown",
-				"beige",
-				"red",
-				"orange",
-				"white",
-				"blue",
-				"grey"
-			],
-			"inStock": 20,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 19,
-			"title": "Футболка Бегемотик",
-			"price": 490,
-			"image": "Shop/tshort4-beige.jpg",
-			"category": "tshort",
-			"size": ["s", "m", "l", "xl"],
-			"colors": ["pink", "brown", "beige", "orange", "black", "grey"],
-			"inStock": 19,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		},
-		{
-			"id": 20,
-			"title": "Футболка Киллуа",
-			"price": 500,
-			"image": "Shop/tshort5.jpg",
-			"category": "tshort",
-			"size": ["s", "m", "xl"],
-			"colors": [
-				"pink",
-				"black",
-				"brown",
-				"beige",
-				"red",
-				"orange",
-				"white",
-				"blue",
-				"grey"
-			],
-			"inStock": 14,
-			"selectedSize": "",
-			"count": 1,
-			"totalPrice": 0
-		}
-	]
+  "users": [
+    {
+      "email": "info@womazing.com",
+      "password": "$2a$10$CL8nwrF0pfawiWvmU6xxR.U9e4WfjHCz2LWSyO9DluKDQ4e.WvE7a",
+      "id": 1,
+      "order": [
+        {
+          "id": 3,
+          "title": "Hoody Anime",
+          "price": 519,
+          "image": "Shop/hoody3.jpg",
+          "category": "hoody",
+          "size": [
+            "s",
+            "m",
+            "l",
+            "xl"
+          ],
+          "colors": [
+            "white",
+            "black",
+            "grey"
+          ],
+          "inStock": 23,
+          "selectedSize": "",
+          "count": 1,
+          "totalPrice": 519
+        },
+        {
+          "id": 4,
+          "title": "Hoody Wendy",
+          "price": 75,
+          "image": "Shop/hoody4.jpg",
+          "category": "hoody",
+          "size": [
+            "s",
+            "m",
+            "xl"
+          ],
+          "colors": [
+            "red",
+            "grey",
+            "black",
+            "white"
+          ],
+          "inStock": 25,
+          "selectedSize": "",
+          "count": 5,
+          "totalPrice": 375
+        }
+      ]
+    },
+    {
+      "email": "info@womazing.com",
+      "password": "$2a$10$Y/dY9hAc.0QgIzJNZPiqj.wbTH6wAoLTsTIXam449dp8LcL1O1qMC",
+      "id": 2
+    }
+  ],
+  "clothes": [
+    {
+      "id": 1,
+      "title": "Hoody Chess",
+      "price": 415,
+      "image": "Shop/hoody1.jpg",
+      "category": "hoody",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl",
+        "xxl",
+        "xs"
+      ],
+      "colors": [
+        "red",
+        "blue",
+        "white",
+        "black"
+      ],
+      "inStock": 15,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 2,
+      "title": "Hoody Harley Queen",
+      "price": 400,
+      "image": "Shop/hoody2.jpg",
+      "category": "hoody",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "black",
+        "white"
+      ],
+      "inStock": 21,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 3,
+      "title": "Hoody Anime",
+      "price": 519,
+      "image": "Shop/hoody3.jpg",
+      "category": "hoody",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ],
+      "colors": [
+        "white",
+        "black",
+        "grey"
+      ],
+      "inStock": 23,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 4,
+      "title": "Hoody Wendy",
+      "price": 75,
+      "image": "Shop/hoody4.jpg",
+      "category": "hoody",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "red",
+        "grey",
+        "black",
+        "white"
+      ],
+      "inStock": 25,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 5,
+      "title": "Hoody Rick and Morty",
+      "price": 339,
+      "image": "Shop/hoody5.jpg",
+      "category": "hoody",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ],
+      "colors": [
+        "white",
+        "black",
+        "grey"
+      ],
+      "inStock": 10,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 6,
+      "title": "Sport Suit STAMINA1",
+      "price": 279,
+      "image": "Shop/sportsuit1-black.jpg",
+      "category": "sportsuit",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "beige",
+        "black",
+        "white",
+        "red",
+        "blue",
+        "pink",
+        "grey"
+      ],
+      "inStock": 33,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 7,
+      "title": "Sport Suit STAMINA2",
+      "price": 279,
+      "image": "Shop/sportsuit2.jpg",
+      "category": "sportsuit",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ],
+      "colors": [
+        "beige",
+        "black",
+        "white",
+        "red",
+        "blue",
+        "pink",
+        "grey"
+      ],
+      "inStock": 12,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 8,
+      "title": "Sport Suit Milk",
+      "price": 229,
+      "image": "Shop/sportsuit3-blue.jpg",
+      "category": "sportsuit",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "beige",
+        "black",
+        "white",
+        "red",
+        "pink",
+        "grey"
+      ],
+      "inStock": 9,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 9,
+      "title": "Sport Suit WarmHeart",
+      "price": 259,
+      "image": "Shop/sportsuit4.jpg",
+      "category": "sportsuit",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ],
+      "colors": [
+        "beige",
+        "black",
+        "white",
+        "red",
+        "pink",
+        "grey",
+        "blue"
+      ],
+      "inStock": 31,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 10,
+      "title": "Sport Suit Flow",
+      "price": 290,
+      "image": "Shop/sportsuit5-black.jpg",
+      "category": "sportsuit",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "beige",
+        "black",
+        "white",
+        "red",
+        "pink",
+        "grey",
+        "blue"
+      ],
+      "inStock": 6,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 11,
+      "title": "Sweatshirt Jinx LOL",
+      "price": 300,
+      "image": "Shop/sweatshirt5.jpg",
+      "category": "sweatshirt",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ],
+      "colors": [
+        "grey",
+        "red",
+        "black",
+        "white"
+      ],
+      "inStock": 45,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 12,
+      "title": "Sweatshirt Dragon",
+      "price": 200,
+      "image": "Shop/sweatshirt4-black.jpg",
+      "category": "sweatshirt",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "grey",
+        "black",
+        "white",
+        "red"
+      ],
+      "inStock": 52,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 13,
+      "title": "Sweatshirt Rabbit",
+      "price": 230,
+      "image": "Shop/sweatshirt3-pink.jpg",
+      "category": "sweatshirt",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ],
+      "colors": [
+        "pink",
+        "white",
+        "black",
+        "red",
+        "khaki",
+        "beige",
+        "grey",
+        "aqua",
+        "blue"
+      ],
+      "inStock": 44,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 14,
+      "title": "Sweatshirt Cat",
+      "price": 250,
+      "image": "Shop/sweatshirt2.jpg",
+      "category": "sweatshirt",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "pink",
+        "white",
+        "black",
+        "red",
+        "khaki",
+        "beige",
+        "grey",
+        "aqua",
+        "blue"
+      ],
+      "inStock": 15,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 15,
+      "title": "Sweatshirt Euphoria",
+      "price": 200,
+      "image": "Shop/sweatshirt1.jpg",
+      "category": "sweatshirt",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ],
+      "colors": [
+        "white",
+        "grey",
+        "black",
+        "red"
+      ],
+      "inStock": 16,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 16,
+      "title": "Футболка Монализа",
+      "price": 540,
+      "image": "Shop/tshort1.jpg",
+      "category": "tshort",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "pink",
+        "black",
+        "brown",
+        "beige",
+        "red",
+        "orange",
+        "white",
+        "blue",
+        "grey"
+      ],
+      "inStock": 27,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 17,
+      "title": "Футболка девочка",
+      "price": 520,
+      "image": "Shop/tshort2-beige.jpg",
+      "category": "tshort",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ],
+      "colors": [
+        "pink",
+        "brown",
+        "beige",
+        "red",
+        "white",
+        "black"
+      ],
+      "inStock": 31,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 18,
+      "title": "Футболка Japan",
+      "price": 350,
+      "image": "Shop/tshort3-black.jpg",
+      "category": "tshort",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "pink",
+        "black",
+        "brown",
+        "beige",
+        "red",
+        "orange",
+        "white",
+        "blue",
+        "grey"
+      ],
+      "inStock": 20,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 19,
+      "title": "Футболка Бегемотик",
+      "price": 490,
+      "image": "Shop/tshort4-beige.jpg",
+      "category": "tshort",
+      "size": [
+        "s",
+        "m",
+        "l",
+        "xl"
+      ],
+      "colors": [
+        "pink",
+        "brown",
+        "beige",
+        "orange",
+        "black",
+        "grey"
+      ],
+      "inStock": 19,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    },
+    {
+      "id": 20,
+      "title": "Футболка Киллуа",
+      "price": 500,
+      "image": "Shop/tshort5.jpg",
+      "category": "tshort",
+      "size": [
+        "s",
+        "m",
+        "xl"
+      ],
+      "colors": [
+        "pink",
+        "black",
+        "brown",
+        "beige",
+        "red",
+        "orange",
+        "white",
+        "blue",
+        "grey"
+      ],
+      "inStock": 14,
+      "selectedSize": "",
+      "count": 1,
+      "totalPrice": 0
+    }
+  ],
+  "orders": [
+    {
+      "name": "qqq",
+      "email": "qqqqqqqqq@qqqqqqq",
+      "tel": "qqqqqqqqq",
+      "country": "qqqqqqqq",
+      "city": "qqqqqqqq",
+      "street": "qqqqqqqqqq",
+      "house": "qqqqqqqqqqqq",
+      "appartment": "qqqqqqqqqq",
+      "comment": "qqqqqqqqqqqqqqq",
+      "order": [
+        {
+          "id": 2,
+          "title": "Hoody Harley Queen",
+          "price": 400,
+          "image": "Shop/hoody2.jpg",
+          "category": "hoody",
+          "size": [
+            "s",
+            "m",
+            "xl"
+          ],
+          "colors": [
+            "black",
+            "white"
+          ],
+          "inStock": 21,
+          "selectedSize": "",
+          "count": 1,
+          "totalPrice": 400
+        }
+      ],
+      "user": {
+        "id": 1,
+        "email": "aaksdj@saklnd",
+        "password": "123123",
+        "order": []
+      },
+      "id": 1
+    },
+    {
+      "name": "fghgfh",
+      "email": "fghfghgfh@sadasdsa",
+      "tel": "fghfghfghfg",
+      "country": "hfghfghfghfg",
+      "city": "hfghfghfgh",
+      "street": "fghfgh",
+      "house": "fghgfh",
+      "appartment": "fghfgh",
+      "comment": "fghgfhgfhgfh",
+      "order": [
+        {
+          "id": 3,
+          "title": "Hoody Anime",
+          "price": 519,
+          "image": "Shop/hoody3.jpg",
+          "category": "hoody",
+          "size": [
+            "s",
+            "m",
+            "l",
+            "xl"
+          ],
+          "colors": [
+            "white",
+            "black",
+            "grey"
+          ],
+          "inStock": 23,
+          "selectedSize": "",
+          "count": 1,
+          "totalPrice": 519
+        },
+        {
+          "id": 4,
+          "title": "Hoody Wendy",
+          "price": 75,
+          "image": "Shop/hoody4.jpg",
+          "category": "hoody",
+          "size": [
+            "s",
+            "m",
+            "xl"
+          ],
+          "colors": [
+            "red",
+            "grey",
+            "black",
+            "white"
+          ],
+          "inStock": 25,
+          "selectedSize": "",
+          "count": 5,
+          "totalPrice": 375
+        }
+      ],
+      "user": {
+        "id": 1,
+        "email": "info@womazing.com",
+        "password": "123123",
+        "order": []
+      },
+      "id": 2
+    }
+  ]
 }

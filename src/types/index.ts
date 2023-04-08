@@ -1,12 +1,24 @@
 export interface IUser {
+	id?: number
 	email: string
 	password: string
-	orders?: IProductItem[]
 }
 
 export interface IRegisterFormInput {
 	email: string
 	password: string
+}
+
+export interface IOrderInformation {
+	name: string
+	email: string
+	tel: string
+	country: string
+	city: string
+	street: string
+	house: string
+	appartment: string
+	comment: string
 }
 
 export interface IProductItem {
@@ -21,4 +33,18 @@ export interface IProductItem {
 	count: number
 	totalPrice: number
 	selectedSize?: string
+}
+
+export interface IOrder {
+	name: string
+	email: string
+	tel: string
+	country: string
+	city: string
+	street: string
+	house: string
+	appartment: string
+	comment: string
+	order: IProductItem[]
+	user: IUser
 }
