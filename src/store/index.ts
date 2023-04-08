@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import userReducer from './slices/userSlice'
 import productsReducer from './slices/productsSlice'
 import cartReducer from './slices/cartSlice'
+import orderReducer from './slices/orderSlice'
 import { userApi } from '@/services/UserService'
 import {
 	persistStore,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
 	user: userReducer,
 	products: productsReducer,
 	cart: cartReducer,
+	order: orderReducer,
 	[userApi.reducerPath]: userApi.reducer,
 	[productApi.reducerPath]: productApi.reducer
 })
