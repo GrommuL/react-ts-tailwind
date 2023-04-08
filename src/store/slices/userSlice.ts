@@ -13,17 +13,14 @@ const userSlice = createSlice({
 		addUser: (state, action: PayloadAction<IUser>) => {
 			state.email = action.payload.email
 			state.password = action.payload.password
-			state.orders = action.payload.orders
 		},
 		clearUser: (state) => {
 			state.email = ''
 			state.password = ''
-			state.orders = []
 		},
 		loginUser: (state, action: PayloadAction<IUser>) => {
 			state.email = action.payload.email
 			state.password = action.payload.password
-			state.orders = action.payload.orders
 		}
 	}
 })

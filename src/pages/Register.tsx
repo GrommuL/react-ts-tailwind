@@ -2,22 +2,20 @@ import React from 'react'
 import bg from '@/assets/dream-team-2.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { IRegisterFormInput } from '@/types'
-import { useAppDispatch, useAppSelector } from '@/utils/hooks/redux'
+import { IRegisterFormInput, IUser } from '@/types'
+import { useAppDispatch } from '@/utils/hooks/redux'
 import { addUser } from '@/store/slices/userSlice'
 import { useAddUserMutation } from '@/services/UserService'
 
 const Register: React.FC = (): JSX.Element => {
 	const navigate = useNavigate()
 	const [createUser] = useAddUserMutation()
-	const order = useAppSelector((state) => state.cart)
-	const orders = useAppSelector((state) => state.user.orders)
 	const dispatch = useAppDispatch()
-	const { register, handleSubmit, reset } = useForm<IRegisterFormInput>()
-	const onSubmit: SubmitHandler<IRegisterFormInput> = (data) => {
+	const { register, handleSubmit, reset } = useForm<IUser>()
+	const onSubmit: SubmitHandler<IUser> = (data) => {
 		try {
 			createUser(data)
-			dispatch(addUser({ ...data, orders: orders?.concat(order) }))
+			dispatch(addUser(data))
 			reset()
 			navigate('/')
 		} catch (error) {
