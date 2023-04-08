@@ -20,40 +20,41 @@ const Cart: React.FC = (): JSX.Element => {
 								<span className='w-[285px]'>Количество</span>
 								<span className='w-[158px]'>Всего</span>
 							</div>
-							<div className='flex flex-col gap-[70px]'>
-								<div className='flex flex-col gap-[20px]'>
-									{cartItems.items.map((item) => (
-										<CartItem key={item.id} {...item} />
-									))}
-								</div>
-								<form className='flex items-center gap-[16px]'>
-									<input
-										className='text-[17px] leading-[24px] outline-none w-[255px] h-[47px] border-b-2 border-black'
-										type='text'
-										placeholder='Введите купон'
-									/>
-									<button
-										className='text-[17px] leading-[24px] text-aqua border border-aqua flex items-center justify-center py-[22px] px-[50px] hover:bg-aqua hover:text-white'
-										type='submit'
-									>
-										Применить купон
-									</button>
-								</form>
-								<div className='flex items-center justify-end gap-[15px]'>
-									<div className='flex items-center justify-center gap-[69px] w-[287px] h-[68px] bg-linen'>
-										<span className='text-[25px] leading-[35px]'>Итого:</span>
-										<span className='text-[25px] leading-[35px]'>
-											${cartItems.itemsTotalPrice}
-										</span>
+							{cartItems.items.length ? (
+								<div className='flex flex-col gap-[70px]'>
+									<div className='flex flex-col gap-[20px]'>
+										{cartItems.items.map((item) => (
+											<CartItem key={item.id} {...item} />
+										))}
 									</div>
+									<div className='flex items-center justify-end gap-[15px]'>
+										<div className='flex items-center justify-center gap-[69px] w-[287px] h-[68px] bg-linen'>
+											<span className='text-[25px] leading-[35px]'>Итого:</span>
+											<span className='text-[25px] leading-[35px]'>
+												${cartItems.itemsTotalPrice}
+											</span>
+										</div>
+										<Link
+											className='text-[17px] leading-[24px] flex items-center justify-center py-[22px] px-[50px] bg-aqua text-white hover:bg-aquaBright'
+											to='/ordering'
+										>
+											Оформить заказ
+										</Link>
+									</div>
+								</div>
+							) : (
+								<div className='flex flex-col gap-[100px] items-center'>
+									<p className='text-center font-bold text-[34px] leading-[34px]'>
+										В корзине отсутствуют товары
+									</p>
 									<Link
-										className='text-[17px] leading-[24px] flex items-center justify-center py-[22px] px-[50px] bg-aqua text-white hover:bg-aquaBright'
-										to='/ordering'
+										className='w-[263px] h-[68px] bg-aqua text-white flex items-center justify-center text-[17px] leading-[24px] hover:bg-aquaBright'
+										to='/shop'
 									>
-										Оформить заказ
+										Перейти в магазин
 									</Link>
 								</div>
-							</div>
+							)}
 						</div>
 					</div>
 				</section>
