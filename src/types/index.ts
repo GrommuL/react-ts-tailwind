@@ -19,5 +19,6 @@ export interface IProductItem {
 	colors: string[]
 	inStock: number
 	count: number
+	totalPrice: number
 	selectedSize?: string
 }

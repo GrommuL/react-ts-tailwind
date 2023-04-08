@@ -11,6 +11,7 @@ import {
 const CartItem: React.FC<IProductItem> = (props): JSX.Element => {
 	const dispatch = useAppDispatch()
 	const cartItemId = props.id
+	const totalPrice = props.price * props.count
 	const increase = () => {
 		dispatch(incrementCartCount(props))
 	}
@@ -21,7 +22,7 @@ const CartItem: React.FC<IProductItem> = (props): JSX.Element => {
 	return (
 		<div className='flex items-center'>
 			<div className='flex items-center gap-[45px] w-[471px]'>
-				<button onClick={() => dispatch(removeFromCart(cartItemId))}>
+				<button onClick={() => dispatch(removeFromCart(props))}>
 					<CloseIcon />
 				</button>
 				<div className='flex items-center gap-[36px]'>
@@ -59,7 +60,7 @@ const CartItem: React.FC<IProductItem> = (props): JSX.Element => {
 					+
 				</button>
 			</div>
-			<span className='w-[158px]'>${props.price * props.count}</span>
+			<span className='w-[158px]'>${totalPrice}</span>
 		</div>
 	)
 }

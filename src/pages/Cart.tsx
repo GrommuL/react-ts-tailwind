@@ -42,7 +42,9 @@ const Cart: React.FC = (): JSX.Element => {
 								<div className='flex items-center justify-end gap-[15px]'>
 									<div className='flex items-center justify-center gap-[69px] w-[287px] h-[68px] bg-linen'>
 										<span className='text-[25px] leading-[35px]'>Итого:</span>
-										<span className='text-[25px] leading-[35px]'>$129</span>
+										<span className='text-[25px] leading-[35px]'>
+											${cartItems.itemsTotalPrice}
+										</span>
 									</div>
 									<Link
 										className='text-[17px] leading-[24px] flex items-center justify-center py-[22px] px-[50px] bg-aqua text-white hover:bg-aquaBright'

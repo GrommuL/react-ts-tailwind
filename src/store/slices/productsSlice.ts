@@ -9,6 +9,7 @@ const initialState: IProductItem = {
 	size: [],
 	colors: [],
 	inStock: 0,
+	totalPrice: 0,
 	count: 1
 }
 
