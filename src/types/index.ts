@@ -18,4 +18,6 @@ export interface IProductItem {
 	size: string[]
 	colors: string[]
 	inStock: number
+	count: number
+	selectedSize?: string
 }
