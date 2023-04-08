@@ -8,7 +8,8 @@ const initialState: IProductItem = {
 	category: '',
 	size: [],
 	colors: [],
-	inStock: 0
+	inStock: 0,
+	count: 1
 }
 
 const productsSlice = createSlice({

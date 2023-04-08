@@ -2,13 +2,21 @@ import React from 'react'
 import CloseIcon from './icons/CloseIcon'
 import { IProductItem } from '@/types'
 import { useAppDispatch } from '@/utils/hooks/redux'
-import { removeFromCart } from '@/store/slices/cartSlice'
+import {
+	decrementCartCount,
+	incrementCartCount,
+	removeFromCart
+} from '@/store/slices/cartSlice'
 
 const CartItem: React.FC<IProductItem> = (props): JSX.Element => {
-	const [count, setCount] = React.useState<number>(1)
 	const dispatch = useAppDispatch()
 	const cartItemId = props.id
-	// onClick={() => dispatch(removeFromCart())}
+	const increase = () => {
+		dispatch(incrementCartCount(props))
+	}
+	const decrease = () => {
+		dispatch(decrementCartCount(props))
+	}
 
 	return (
 		<div className='flex items-center'>
@@ -29,33 +37,29 @@ const CartItem: React.FC<IProductItem> = (props): JSX.Element => {
 				${props.price}
 			</span>
 			<div className='w-[285px] flex items-center gap-[5px]'>
-				{count <= 1 ? (
-					<button
-						className='w-[47px] h-[47px] border border-black flex items-center justify-center text-[20px] leading-[28px] hover:bg-black hover:text-white'
-						disabled
-						onClick={() => setCount((prev) => prev - 1)}
-					>
+				{props.count <= 1 ? (
+					<button className='w-[47px] h-[47px] border border-black flex items-center justify-center text-[20px] leading-[28px]'>
 						-
 					</button>
 				) : (
 					<button
 						className='w-[47px] h-[47px] border border-black flex items-center justify-center text-[20px] leading-[28px] hover:bg-black hover:text-white'
-						onClick={() => setCount((prev) => prev - 1)}
+						onClick={decrease}
 					>
 						-
 					</button>
 				)}
 				<span className='w-[47px] h-[47px] border border-black flex items-center justify-center text-[20px] leading-[28px]'>
-					{count}
+					{props.count}
 				</span>
 				<button
 					className='w-[47px] h-[47px] border border-black flex items-center justify-center text-[20px] leading-[28px] hover:bg-black hover:text-white'
-					onClick={() => setCount((prev) => prev + 1)}
+					onClick={increase}
 				>
 					+
 				</button>
 			</div>
-			<span className='w-[158px]'>${props.price * count}</span>
+			<span className='w-[158px]'>${props.price * props.count}</span>
 		</div>
 	)
 }
