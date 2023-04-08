@@ -9,6 +9,7 @@ import { persistor } from '@/store'
 
 const Header: React.FC = (): JSX.Element => {
 	const email = useAppSelector((state) => state.user.email)
+	const cartItemsAmount = useAppSelector((state) => state.cart.items)
 	const dispatch = useAppDispatch()
 	const clearLogin = () => {
 		dispatch(clearUser())
@@ -32,8 +33,15 @@ const Header: React.FC = (): JSX.Element => {
 						))}
 					</nav>
 					<div className='flex items-center gap-[35px]'>
-						<Link to='/cart'>
+						<Link className='relative' to='/cart'>
 							<BasketIcon />
+							{cartItemsAmount.length ? (
+								<div className='w-[20px] h-[20px] bg-aqua rounded-full absolute -top-[13px] -right-[11px] flex items-center justify-center text-white text-[12px]'>
+									{cartItemsAmount.length}
+								</div>
+							) : (
+								''
+							)}
 						</Link>
 						{email.length ? (
 							<button
