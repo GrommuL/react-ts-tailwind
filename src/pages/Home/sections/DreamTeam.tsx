@@ -1,12 +1,14 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper'
+import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import dreamTeamOne from '@/assets/dream-team-1.jpg'
 import dreamTeamTwo from '@/assets/dream-team-2.jpg'
 import dreamTeamThree from '@/assets/dream-team-3.jpg'
-import { Link } from 'react-router-dom'
 
 const DreamTeam: React.FC = (): JSX.Element => {
 	return (
@@ -24,13 +26,13 @@ const DreamTeam: React.FC = (): JSX.Element => {
 							className='mySwiper pt-0 h-[487px]'
 						>
 							<SwiperSlide>
-								<img src={dreamTeamOne} alt='' />
+								<LazyLoadImage effect='blur' src={dreamTeamOne} alt='' />
 							</SwiperSlide>
 							<SwiperSlide>
-								<img src={dreamTeamTwo} alt='' />
+								<LazyLoadImage effect='blur' src={dreamTeamTwo} alt='' />
 							</SwiperSlide>
 							<SwiperSlide>
-								<img src={dreamTeamThree} alt='' />
+								<LazyLoadImage effect='blur' src={dreamTeamThree} alt='' />
 							</SwiperSlide>
 						</Swiper>
 						<div className='w-[255px] flex flex-col gap-[28px]'>

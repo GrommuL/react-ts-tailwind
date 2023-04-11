@@ -2,10 +2,12 @@ import React from 'react'
 import bg from '@/assets/dream-team-2.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { IRegisterFormInput, IUser } from '@/types'
+import { IUser } from '@/types'
 import { useAppDispatch } from '@/utils/hooks/redux'
 import { addUser } from '@/store/slices/userSlice'
 import { useAddUserMutation } from '@/services/UserService'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const Register: React.FC = (): JSX.Element => {
 	const navigate = useNavigate()
@@ -67,10 +69,11 @@ const Register: React.FC = (): JSX.Element => {
 					</Link>
 				</div>
 			</div>
-			<img
+			<LazyLoadImage
 				className='w-[50%] h-screen object-cover object-top'
 				src={bg}
 				alt=''
+				effect='blur'
 			/>
 		</main>
 	)

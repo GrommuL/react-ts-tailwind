@@ -6,6 +6,8 @@ import { IRegisterFormInput } from '@/types'
 import { useAppDispatch } from '@/utils/hooks/redux'
 import { loginUser } from '@/store/slices/userSlice'
 import { useSignInUserMutation } from '@/services/UserService'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const Login: React.FC = (): JSX.Element => {
 	const [signInUser] = useSignInUserMutation()
@@ -15,7 +17,7 @@ const Login: React.FC = (): JSX.Element => {
 	const onSubmitLogin: SubmitHandler<IRegisterFormInput> = (data) => {
 		try {
 			signInUser(data)
-			dispatch(loginUser({ ...data, orders: [] }))
+			dispatch(loginUser({ ...data }))
 			reset()
 			navigate('/')
 		} catch (error) {
@@ -30,10 +32,11 @@ const Login: React.FC = (): JSX.Element => {
 			>
 				На главную
 			</Link>
-			<img
+			<LazyLoadImage
 				className='w-[50%] h-screen object-cover object-top'
 				src={bg}
 				alt=''
+				effect='blur'
 			/>
 			<div className='w-[50%] flex flex-col gap-[170px] items-center justify-center'>
 				<div className='flex flex-col gap-[90px]'>
