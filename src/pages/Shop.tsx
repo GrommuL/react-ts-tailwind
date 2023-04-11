@@ -6,14 +6,13 @@ import ProductItem from '@/components/ProductItem'
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '@/utils/hooks/redux'
 import { setFilter, setSort } from '@/store/slices/filterSlice'
+import Skeleton from '@/components/Skeleton'
 
 const Shop: React.FC = (): JSX.Element => {
 	const params = useParams()
 	const dispatch = useAppDispatch()
 	const filter = useAppSelector((state) => state.filter)
-	// const [category, setCategory] = React.useState<string>('all')
-	// const [sort, setSort] = React.useState<string>('')
-	const { data = [] } = useGetProductsQuery({
+	const { data = [], isLoading } = useGetProductsQuery({
 		filter: filter.filter,
 		limit: filter.limit,
 		sort: filter.sort
@@ -65,23 +64,23 @@ const Shop: React.FC = (): JSX.Element => {
 						</div>
 						<div className='flex flex-col gap-[65px]'>
 							<div className='flex items-center gap-[30px] flex-wrap'>
-								{data
-									.filter((product) => {
-										if (filter.filter === 'all') {
-											return product
-										}
-										return product.category === filter.filter
-									})
-									.sort((a, b): any => {
-										if (filter.sort === 'desc') {
-											return a.price - b.price
-										} else if (filter.sort === 'asc') {
-											return b.price - a.price
-										}
-									})
-									.map((item) => (
-										<ProductItem key={item.id} {...item} />
-									))}
+								{isLoading
+									? [...new Array(6)].map((i) => <Skeleton key={i} />)
+									: data
+											.filter((product) => {
+												if (filter.filter === 'all') {
+													return product
+												}
+												return product.category === filter.filter
+											})
+											.sort((a, b): any => {
+												if (filter.sort === 'desc') {
+													return a.price - b.price
+												} else if (filter.sort === 'asc') {
+													return b.price - a.price
+												}
+											})
+											.map((item) => <ProductItem key={item.id} {...item} />)}
 							</div>
 							{/* <div className='flex items-center justify-center gap-[14px]'>
 								<button className='w-[41px] h-[41px] text-white bg-black text-[17px] leading-[24px]'>
