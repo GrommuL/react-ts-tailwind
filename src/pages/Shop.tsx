@@ -14,9 +14,9 @@ const Shop: React.FC = (): JSX.Element => {
 	const filter = useAppSelector((state) => state.filter)
 	const { data = [], isLoading } = useGetProductsQuery({
 		filter: filter.filter,
-		limit: filter.limit,
 		sort: filter.sort
 	})
+	console.log(data)
 	return (
 		<main className='mt-[190px] mb-[130px]'>
 			<div className='container'>
