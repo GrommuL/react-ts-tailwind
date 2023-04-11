@@ -11,6 +11,10 @@ const initialState: IOrder = {
 	house: '',
 	appartment: '',
 	comment: '',
+	user: {
+		email: '',
+		password: ''
+	},
 	order: []
 }
 
