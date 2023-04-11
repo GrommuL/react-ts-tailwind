@@ -3,6 +3,8 @@ import React from 'react'
 import aboutImageOne from '@/assets/about-1.jpg'
 import aboutImageTwo from '@/assets/about-2.jpg'
 import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const About: React.FC = (): JSX.Element => {
 	return (
@@ -12,7 +14,7 @@ const About: React.FC = (): JSX.Element => {
 					<PageTitle title={'О бренде'} link={'/about'} />
 					<div className='flex flex-col gap-[130px] items-center'>
 						<div className='flex items-center gap-[94px]'>
-							<img src={aboutImageOne} alt='' />
+							<LazyLoadImage effect='blur' src={aboutImageOne} alt='' />
 							<div className='flex flex-col gap-[46px]'>
 								<h3 className='text-[24px] leading-[35px]'>Идея и женщина</h3>
 								<p className='text-[17px] leading-[24px] flex flex-col gap-[15px] max-w-[542px]'>
@@ -54,7 +56,7 @@ const About: React.FC = (): JSX.Element => {
 									</span>
 								</p>
 							</div>
-							<img src={aboutImageTwo} alt='' />
+							<LazyLoadImage effect='blur' src={aboutImageTwo} alt='' />
 						</div>
 						<Link
 							className='w-[263px] h-[68px] bg-aqua text-white flex items-center justify-center text-[17px] leading-[24px] hover:bg-aquaBright'

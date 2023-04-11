@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ArrowIcon from './icons/ArrowIcon'
 import { IProductItem } from '@/types'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import ArrowIcon from './icons/ArrowIcon'
 
 const ProductItem: React.FC<IProductItem> = (props): JSX.Element => {
 	return (
@@ -10,7 +12,7 @@ const ProductItem: React.FC<IProductItem> = (props): JSX.Element => {
 			to={`/product/${props.id}`}
 		>
 			<div className='w-[350px] relative group'>
-				<img src={props.image} alt='' />
+				<LazyLoadImage effect='blur' src={props.image} alt='' />
 				<div className='absolute w-full h-full bg-aquaHover z-10 inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100'>
 					<ArrowIcon />
 				</div>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import ArrowDownIcon from '@/components/icons/ArrowDownIcon'
@@ -93,16 +95,18 @@ const Offer: React.FC = (): JSX.Element => {
 						</SwiperSlide>
 					</Swiper>
 					<div className='relative'>
-						<img src={mainPhoto} alt='' />
-						<img
+						<LazyLoadImage effect='blur' src={mainPhoto} alt='' />
+						<LazyLoadImage
 							className='absolute top-[100px] -right-[115px]'
 							src={secondPhoto}
 							alt=''
+							effect='blur'
 						/>
-						<img
+						<LazyLoadImage
 							className='absolute -bottom-[90px] -left-[140px]'
 							src={thirdPhoto}
 							alt=''
+							effect='blur'
 						/>
 					</div>
 				</div>
