@@ -13,6 +13,9 @@ export const productApi = createApi({
 					filter !== 'all' ? `category=${filter}&` : ''
 				}_limit=${limit}&_sort=${sort}`
 		}),
+		getProductsInHomePage: builder.query<IProductItem[], IParams>({
+			query: ({ limit }) => `clothes?_limit=${limit}`
+		}),
 		getOneProduct: builder.query<IProductItem, any>({
 			query: (id) => ({
 				url: `clothes/${id}`,
@@ -24,4 +27,8 @@ export const productApi = createApi({
 	})
 })
 
-export const { useGetProductsQuery, useGetOneProductQuery } = productApi
+export const {
+	useGetProductsQuery,
+	useGetOneProductQuery,
+	useGetProductsInHomePageQuery
+} = productApi
