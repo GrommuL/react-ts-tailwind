@@ -2,8 +2,7 @@ import { IParams } from '@/types'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 const initialState: IParams = {
-	filter: 'all',
-	limit: 6
+	filter: 'all'
 }
 
 const filterSlice = createSlice({
