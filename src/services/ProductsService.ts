@@ -1,12 +1,6 @@
-import { IProductItem } from '@/types'
+import { IParams, IProductItem } from '@/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-interface IParams {
-	sort?: string
-	filter?: string
-	limit?: number
-	id?: string
-}
 export const productApi = createApi({
 	reducerPath: 'clothes',
 	baseQuery: fetchBaseQuery({

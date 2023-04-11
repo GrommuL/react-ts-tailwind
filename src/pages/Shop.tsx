@@ -1,16 +1,22 @@
 import { categoriesList } from '@/common/categoriesList'
+import { useGetProductsQuery } from '@/services/ProductsService'
+import { useParams } from 'react-router-dom'
 import PageTitle from '@/components/PageTitle'
 import ProductItem from '@/components/ProductItem'
-import { useGetProductsQuery } from '@/services/ProductsService'
 import React from 'react'
+import { useAppDispatch, useAppSelector } from '@/utils/hooks/redux'
+import { setFilter, setSort } from '@/store/slices/filterSlice'
 
 const Shop: React.FC = (): JSX.Element => {
-	const [category, setCategory] = React.useState<string>('all')
-	const [sort, setSort] = React.useState<string>('')
+	const params = useParams()
+	const dispatch = useAppDispatch()
+	const filter = useAppSelector((state) => state.filter)
+	// const [category, setCategory] = React.useState<string>('all')
+	// const [sort, setSort] = React.useState<string>('')
 	const { data = [] } = useGetProductsQuery({
-		filter: category,
-		limit: 6,
-		sort: sort
+		filter: filter.filter,
+		limit: filter.limit,
+		sort: filter.sort
 	})
 	return (
 		<main className='mt-[190px] mb-[130px]'>
@@ -24,11 +30,11 @@ const Shop: React.FC = (): JSX.Element => {
 									<button
 										key={item.title}
 										className={
-											category === item.category
+											filter.filter === item.category
 												? 'categoryButtonActive'
 												: 'categoryButton'
 										}
-										onClick={() => setCategory(item.category)}
+										onClick={() => dispatch(setFilter(item.category))}
 									>
 										{item.title}
 									</button>
@@ -36,14 +42,22 @@ const Shop: React.FC = (): JSX.Element => {
 							</div>
 							<div className='flex items-center justify-center gap-[10px]'>
 								<button
-									className='categoryButton min-w-[260px]'
-									onClick={() => setSort('asc')}
+									className={
+										filter.sort === 'asc'
+											? 'categoryButtonActive min-w-[260px]'
+											: 'categoryButton min-w-[260px]'
+									}
+									onClick={() => dispatch(setSort('asc'))}
 								>
 									По возврастанию
 								</button>
 								<button
-									className='categoryButton min-w-[260px]'
-									onClick={() => setSort('desc')}
+									className={
+										filter.sort === 'desc'
+											? 'categoryButtonActive min-w-[260px]'
+											: 'categoryButton min-w-[260px]'
+									}
+									onClick={() => dispatch(setSort('desc'))}
 								>
 									По убыванию
 								</button>
@@ -53,15 +67,15 @@ const Shop: React.FC = (): JSX.Element => {
 							<div className='flex items-center gap-[30px] flex-wrap'>
 								{data
 									.filter((product) => {
-										if (category === 'all') {
+										if (filter.filter === 'all') {
 											return product
 										}
-										return product.category === category
+										return product.category === filter.filter
 									})
 									.sort((a, b): any => {
-										if (sort === 'desc') {
+										if (filter.sort === 'desc') {
 											return a.price - b.price
-										} else if (sort === 'asc') {
+										} else if (filter.sort === 'asc') {
 											return b.price - a.price
 										}
 									})
@@ -69,8 +83,7 @@ const Shop: React.FC = (): JSX.Element => {
 										<ProductItem key={item.id} {...item} />
 									))}
 							</div>
-							{/* <span>Показано: 9 из {data.length} товаров</span>
-							<div className='flex items-center justify-center gap-[14px]'>
+							{/* <div className='flex items-center justify-center gap-[14px]'>
 								<button className='w-[41px] h-[41px] text-white bg-black text-[17px] leading-[24px]'>
 									1
 								</button>
