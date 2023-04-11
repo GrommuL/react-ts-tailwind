@@ -5,28 +5,49 @@ import { useGetProductsQuery } from '@/services/ProductsService'
 import React from 'react'
 
 const Shop: React.FC = (): JSX.Element => {
-	const [category, setCategory] = React.useState('all')
-	const { data = [] } = useGetProductsQuery({ filter: category, limit: 9 })
+	const [category, setCategory] = React.useState<string>('all')
+	const [sort, setSort] = React.useState<string>('')
+	const { data = [] } = useGetProductsQuery({
+		filter: category,
+		limit: 6,
+		sort: sort
+	})
 	return (
 		<main className='mt-[190px] mb-[130px]'>
 			<div className='container'>
 				<section className='flex flex-col gap-[214px]'>
 					<PageTitle title={'Магазин'} link={'/shop'} />
 					<div className='flex flex-col gap-[92px]'>
-						<div className='flex items-center justify-center gap-[10px]'>
-							{categoriesList.map((item) => (
+						<div className='flex flex-col gap-[42px]'>
+							<div className='flex items-center justify-center gap-[10px]'>
+								{categoriesList.map((item) => (
+									<button
+										key={item.title}
+										className={
+											category === item.category
+												? 'categoryButtonActive'
+												: 'categoryButton'
+										}
+										onClick={() => setCategory(item.category)}
+									>
+										{item.title}
+									</button>
+								))}
+							</div>
+							<div className='flex items-center justify-center gap-[10px]'>
 								<button
-									key={item.title}
-									className={
-										category === item.category
-											? 'categoryButtonActive'
-											: 'categoryButton'
-									}
-									onClick={() => setCategory(item.category)}
+									className='categoryButton min-w-[260px]'
+									onClick={() => setSort('asc')}
 								>
-									{item.title}
+									По возврастанию
 								</button>
-							))}
+								<button
+									className='categoryButton min-w-[260px]'
+									onClick={() => setSort('desc')}
+								>
+									По убыванию
+								</button>
+							</div>
 						</div>
 						<div className='flex flex-col gap-[65px]'>
 							<div className='flex items-center gap-[30px] flex-wrap'>
@@ -36,6 +57,13 @@ const Shop: React.FC = (): JSX.Element => {
 											return product
 										}
 										return product.category === category
+									})
+									.sort((a, b): any => {
+										if (sort === 'desc') {
+											return a.price - b.price
+										} else if (sort === 'asc') {
+											return b.price - a.price
+										}
 									})
 									.map((item) => (
 										<ProductItem key={item.id} {...item} />

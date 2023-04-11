@@ -2,6 +2,7 @@ import { IProductItem } from '@/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 interface IParams {
+	sort?: string
 	filter?: string
 	limit?: number
 	id?: string
@@ -13,8 +14,10 @@ export const productApi = createApi({
 	}),
 	endpoints: (builder) => ({
 		getProducts: builder.query<IProductItem[], IParams>({
-			query: ({ filter, limit }) =>
-				`clothes?${filter !== 'all' ? `category=${filter}&` : ''}limit=${limit}`
+			query: ({ filter, limit, sort }) =>
+				`clothes?${
+					filter !== 'all' ? `category=${filter}&` : ''
+				}_limit=${limit}&_sort=${sort}`
 		}),
 		getOneProduct: builder.query<IProductItem, any>({
 			query: (id) => ({
