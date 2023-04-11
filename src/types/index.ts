@@ -4,6 +4,13 @@ export interface IUser {
 	password: string
 }
 
+export interface IParams {
+	sort?: string
+	filter?: string
+	limit?: number
+	id?: string
+}
+
 export interface IRegisterFormInput {
 	email: string
 	password: string
