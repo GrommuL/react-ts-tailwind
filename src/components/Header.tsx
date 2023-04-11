@@ -44,12 +44,17 @@ const Header: React.FC = (): JSX.Element => {
 							)}
 						</Link>
 						{email.length ? (
-							<button
-								className='hover:text-aqua text-[16px] leading-[22px]'
-								onClick={clearLogin}
-							>
-								Выйти
-							</button>
+							<div className='flex flex-col gap-1'>
+								<p className='text-[15px] leading-[15px] cursor-pointer'>
+									{email}
+								</p>
+								<button
+									className='hover:text-aqua text-[16px] leading-[22px]'
+									onClick={clearLogin}
+								>
+									Выйти
+								</button>
+							</div>
 						) : (
 							<Link
 								className='hover:text-aqua text-[16px] leading-[22px]'
