@@ -4,6 +4,7 @@ import productsReducer from './slices/productsSlice'
 import cartReducer from './slices/cartSlice'
 import orderReducer from './slices/orderSlice'
 import filterReducer from './slices/filterSlice'
+import searchReducer from './slices/searchSlice'
 import { userApi } from '@/services/UserService'
 import {
 	persistStore,
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
 	cart: cartReducer,
 	order: orderReducer,
 	filter: filterReducer,
+	search: searchReducer,
 	[userApi.reducerPath]: userApi.reducer,
 	[productApi.reducerPath]: productApi.reducer,
 	[orderApi.reducerPath]: orderApi.reducer

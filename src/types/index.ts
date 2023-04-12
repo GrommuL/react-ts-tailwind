@@ -5,6 +5,7 @@ export interface IUser {
 }
 
 export interface IParams {
+	searchValue?: string
 	sort?: string
 	filter?: string
 	limit?: number
