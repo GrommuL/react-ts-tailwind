@@ -8,8 +8,10 @@ export const productApi = createApi({
 	}),
 	endpoints: (builder) => ({
 		getProducts: builder.query<IProductItem[], IParams>({
-			query: ({ filter, sort }) =>
-				`clothes?${filter !== 'all' ? `category=${filter}&` : ''}&_sort=${sort}`
+			query: ({ filter, sort, searchValue }) =>
+				`clothes?${
+					filter !== 'all' ? `category=${filter}&` : ''
+				}&_sort=${sort}&q=${searchValue}&`
 		}),
 		getProductsInHomePage: builder.query<IProductItem[], IParams>({
 			query: ({ limit }) => `clothes?_limit=${limit}`

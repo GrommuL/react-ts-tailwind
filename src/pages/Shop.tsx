@@ -1,29 +1,32 @@
 import { categoriesList } from '@/common/categoriesList'
 import { useGetProductsQuery } from '@/services/ProductsService'
-import { useParams } from 'react-router-dom'
 import PageTitle from '@/components/PageTitle'
 import ProductItem from '@/components/ProductItem'
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '@/utils/hooks/redux'
 import { setFilter, setSort } from '@/store/slices/filterSlice'
 import Skeleton from '@/components/Skeleton'
+import Search from '@/components/Search'
+import { useDebounce } from '@/utils/hooks/useDebounce'
 
 const Shop: React.FC = (): JSX.Element => {
-	const params = useParams()
-	const dispatch = useAppDispatch()
 	const filter = useAppSelector((state) => state.filter)
+	const value = useAppSelector((state) => state.search.value)
+	const debouncedValue = useDebounce(value, 1000)
+	const dispatch = useAppDispatch()
 	const { data = [], isLoading } = useGetProductsQuery({
 		filter: filter.filter,
-		sort: filter.sort
+		sort: filter.sort,
+		searchValue: debouncedValue
 	})
-	console.log(data)
 	return (
 		<main className='mt-[190px] mb-[130px]'>
 			<div className='container'>
-				<section className='flex flex-col gap-[214px]'>
+				<section className='flex flex-col gap-[114px]'>
 					<PageTitle title={'Магазин'} link={'/shop'} />
 					<div className='flex flex-col gap-[92px]'>
 						<div className='flex flex-col gap-[42px]'>
+							<Search />
 							<div className='flex items-center justify-center gap-[10px]'>
 								{categoriesList.map((item) => (
 									<button
@@ -67,6 +70,14 @@ const Shop: React.FC = (): JSX.Element => {
 								{isLoading
 									? [...new Array(6)].map((i) => <Skeleton key={i} />)
 									: data
+											.filter((obj) => {
+												if (
+													obj.title.toLowerCase().includes(value.toLowerCase())
+												) {
+													return true
+												}
+												return false
+											})
 											.filter((product) => {
 												if (filter.filter === 'all') {
 													return product
