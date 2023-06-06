@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const productApi = createApi({
 	reducerPath: 'clothes',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://localhost:8080'
+		baseUrl: 'https://womazingbackend.onrender.com'
 	}),
 	endpoints: (builder) => ({
 		getProducts: builder.query<IProductItem[], IParams>({

@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const orderApi = createApi({
 	reducerPath: 'orders',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://localhost:8080'
+		baseUrl: 'https://womazingbackend.onrender.com'
 	}),
 	endpoints: (builder) => ({
 		addOrderToUser: builder.mutation<IUser, IUser>({

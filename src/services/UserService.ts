@@ -3,7 +3,9 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const userApi = createApi({
 	reducerPath: 'users',
-	baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080' }),
+	baseQuery: fetchBaseQuery({
+		baseUrl: 'https://womazingbackend.onrender.com'
+	}),
 	endpoints: (builder) => ({
 		addUser: builder.mutation<IUser, IUser>({
 			query: (user) => ({
