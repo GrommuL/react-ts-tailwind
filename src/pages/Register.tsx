@@ -6,7 +6,6 @@ import { IUser } from '@/types'
 import { useAppDispatch } from '@/utils/hooks/redux'
 import { addUser } from '@/store/slices/userSlice'
 import { useAddUserMutation } from '@/services/UserService'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const Register: React.FC = (): JSX.Element => {
@@ -69,11 +68,10 @@ const Register: React.FC = (): JSX.Element => {
 					</Link>
 				</div>
 			</div>
-			<LazyLoadImage
+			<img
 				className='w-[50%] h-screen object-cover object-top'
 				src={bg}
 				alt=''
-				effect='blur'
 			/>
 		</main>
 	)

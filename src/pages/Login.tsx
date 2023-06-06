@@ -32,11 +32,10 @@ const Login: React.FC = (): JSX.Element => {
 			>
 				На главную
 			</Link>
-			<LazyLoadImage
+			<img
 				className='w-[50%] h-screen object-cover object-top'
 				src={bg}
 				alt=''
-				effect='blur'
 			/>
 			<div className='w-[50%] flex flex-col gap-[170px] items-center justify-center'>
 				<div className='flex flex-col gap-[90px]'>

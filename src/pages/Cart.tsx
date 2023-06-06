@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const Cart: React.FC = (): JSX.Element => {
 	const cartItems = useAppSelector((state) => state.cart)
 	return (
-		<main className='mt-[190px] mb-[130px]'>
+		<main className='mt-[90px] mb-[130px]'>
 			<div className='container'>
 				<section className='flex flex-col gap-[214px]'>
 					<PageTitle title={'Корзина'} link={'/cart'} />
