@@ -15,7 +15,11 @@ const Collections: React.FC = (): JSX.Element => {
 						<div className='flex items-center gap-[30px]'>
 							{isLoading
 								? [...new Array(3)].map((i) => <Skeleton key={i} />)
-								: data.map((item) => <ProductItem key={item.id} {...item} />)}
+								: data.map((item) => {
+										if (item) {
+											return <ProductItem key={item.id} {...item} />
+										}
+								  })}
 						</div>
 						<Link
 							className='w-[263px] h-[68px] border border-aqua text-aqua flex items-center justify-center text-[17px] leading-[24px] hover:bg-aqua hover:text-white'
